@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm - PET FOOD STORE</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        .shop-layout {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            flex-shrink: 0;
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            height: fit-content;
+        }
+        
+        .filter-group {
+            margin-bottom: 25px;
+        }
+        
+        .filter-group:last-child {
+            margin-bottom: 0;
+        }
+        
+        .filter-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .filter-list {
+            list-style: none;
+        }
+        
+        .filter-list li {
+            margin-bottom: 10px;
+        }
+        
+        .filter-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+        
+        .filter-label:hover {
+            color: var(--primary-color);
+        }
+        
+        .filter-label input[type="radio"],
+        .filter-label input[type="checkbox"] {
+            accent-color: var(--primary-color);
+            cursor: pointer;
+        }
+        
+        .btn-clear-filter {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* Main Content Styles */
+        .shop-main {
+            flex: 1;
+        }
+        
+        .shop-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--card-bg);
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 24px;
+        }
+        
+        .sort-by select {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            outline: none;
+            cursor: pointer;
+        }
+
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 40px;
+        }
+        
+        .page-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-main);
+        }
+        
+        .page-btn:hover, .page-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Responsive cho Shop Layout */
+        @media (max-width: 992px) {
+            .shop-layout {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"></span>
+                <div class="logo-text">
+                    <h1>PET FOOD STORE</h1>
+                    <p>Dinh dưỡng tốt nhất cho thú cưng</p>
+                </div>
+            </a>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+                <button type="button" id="searchBtn">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+            <div class="header-actions">
+                <button id="darkModeToggle" class="action-btn" title="Chế độ tối">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="login.html" class="action-btn" title="Đăng nhập">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </a>
+                <!-- <a href="#" class="action-btn" title="Yêu thích">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <span class="badge" id="wishlistCount">0</span>
+                </a> -->
+                <a href="cart.html" class="action-btn" title="Giỏ hàng">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <span class="badge" id="cartCount">0</span>
+                </a>
+                <button class="hamburger" id="hamburgerBtn">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+        </div>
+        <nav class="navbar" id="navbar">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="products.html" class="active">Sản phẩm</a></li>
+                    <li><a href="promotions.html">Khuyến mãi</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container section-padding">
+        <div class="breadcrumb">
+            <a href="index.html">Trang chủ</a> / <span>Sản phẩm</span>
+        </div>
+
+        <div class="shop-layout">
+            <aside class="sidebar">
+                <div class="filter-group">
+                    <h3 class="filter-title">Danh mục</h3>
+                    <ul class="filter-list" id="categoryFilter">
+                        <li><label class="filter-label"><input type="radio" name="category" value="all" checked> Tất cả</label></li>
+                        <li><label class="filter-label"><input type="radio" name="category" value="dog"> Chó</label></li>
+                        <li><label class="filter-label"><input type="radio" name="category" value="cat"> Mèo</label></li>
+                        <li><label class="filter-label"><input type="radio" name="category" value="hamster"> Hamster</label></li>
+                        <li><label class="filter-label"><input type="radio" name="category" value="rabbit"> Thỏ</label></li>
+                        <li><label class="filter-label"><input type="radio" name="category" value="bird"> Chim</label></li>
+                        <li><label class="filter-label"><input type="radio" name="category" value="fish"> Cá</label></li>
+                    </ul>
+                </div>
+
+                <div class="filter-group">
+                    <h3 class="filter-title">Mức giá</h3>
+                    <ul class="filter-list" id="priceFilter">
+                        <li><label class="filter-label"><input type="radio" name="price" value="all" checked> Tất cả</label></li>
+                        <li><label class="filter-label"><input type="radio" name="price" value="under50"> Dưới 50.000đ</label></li>
+                        <li><label class="filter-label"><input type="radio" name="price" value="50to150"> 50.000đ - 150.000đ</label></li>
+                        <li><label class="filter-label"><input type="radio" name="price" value="over150"> Trên 150.000đ</label></li>
+                    </ul>
+                </div>
+
+                <div class="filter-group">
+                    <h3 class="filter-title">Thương hiệu</h3>
+                    <ul class="filter-list" id="brandFilter">
+                        <li><label class="filter-label"><input type="checkbox" value="Pedigree"> Pedigree</label></li>
+                        <li><label class="filter-label"><input type="checkbox" value="Whiskas"> Whiskas</label></li>
+                        <li><label class="filter-label"><input type="checkbox" value="Royal Canin"> Royal Canin</label></li>
+                        <li><label class="filter-label"><input type="checkbox" value="Me-O"> Me-O</label></li>
+                    </ul>
+                </div>
+
+                <button id="clearFiltersBtn" class="btn btn-outline btn-clear-filter" style="border-color: var(--primary-color); color: var(--primary-color);">Xóa bộ lọc</button>
+            </aside>
+
+            <section class="shop-main">
+                <div class="shop-topbar">
+                    <p>Hiển thị <span id="productCount">0</span> sản phẩm</p>
+                    <div class="sort-by">
+                        <label for="sortSelect">Sắp xếp: </label>
+                        <select id="sortSelect">
+                            <option value="default">Mặc định</option>
+                            <option value="newest">Mới nhất</option>
+                            <option value="priceAsc">Giá: Thấp đến cao</option>
+                            <option value="priceDesc">Giá: Cao đến thấp</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="product-grid" id="allProductsGrid">
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">Đang tải sản phẩm...</div>
+                </div>
+
+                <div class="pagination" id="pagination"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3 class="footer-logo">PET FOOD STORE</h3>
+                <p>Dinh dưỡng tốt nhất cho thú cưng của bạn. Chúng tôi cam kết mang đến những sản phẩm chất lượng hàng đầu.</p>
+                <div class="social-links">
+                    <a href="#">FB</a>
+                    <a href="#">IG</a>
+                    <a href="#">YT</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Liên kết nhanh</h3>
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="products.html">Sản phẩm</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Chính sách</h3>
+                <ul>
+                    <li><a href="#">Chính sách giao hàng</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Điều khoản dịch vụ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Liên hệ</h3>
+                <ul>
+                    <li>📍 123 Đường ABC, TP.HCM</li>
+                    <li>📞 0123 456 789</li>
+                    <li>✉️ support@petfoodstore.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PET FOOD STORE. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" title="Lên đầu trang">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/products.js"></script> 
+</body>
+</html>

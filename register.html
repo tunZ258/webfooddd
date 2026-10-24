@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký - PET FOOD STORE</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        .auth-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+        }
+
+        .auth-container {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .auth-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .auth-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+
+        .error-message {
+            color: #F44336;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .form-group.error .form-control {
+            border-color: #F44336;
+        }
+
+        .form-group.error .error-message {
+            display: block;
+        }
+
+        .btn-full {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .auth-redirect {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .auth-redirect a {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .auth-redirect a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"></sspan>
+                <div class="logo-text">
+                    <h1>PET FOOD STORE</h1>
+                    <p>Dinh dưỡng tốt nhất cho thú cưng</p>
+                </div>
+            </a>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+                <button type="button" id="searchBtn">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+            <div class="header-actions">
+                <button id="darkModeToggle" class="action-btn" title="Chế độ tối">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="login.html" class="action-btn" title="Đăng nhập">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </a>
+                <!-- <a href="#" class="action-btn" title="Yêu thích">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <span class="badge" id="wishlistCount">0</span>
+                </a> -->
+                <a href="cart.html" class="action-btn" title="Giỏ hàng">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <span class="badge" id="cartCount">0</span>
+                </a>
+                <button class="hamburger" id="hamburgerBtn">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+        </div>
+        <nav class="navbar" id="navbar">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="products.html">Sản phẩm</a></li>
+                    <li><a href="promotions.html">Khuyến mãi</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container section-padding auth-page">
+        <div class="auth-container">
+            <h2 class="auth-title">Đăng ký tài khoản</h2>
+            <p class="auth-subtitle">Trở thành thành viên để nhận nhiều ưu đãi hấp dẫn</p>
+            
+            <form id="registerForm">
+                <div class="form-group" id="nameGroup">
+                    <label for="registerName">Họ và tên</label>
+                    <input type="text" id="registerName" class="form-control" placeholder="Nhập họ và tên của bạn">
+                    <div class="error-message" id="nameError">Họ tên không được để trống</div>
+                </div>
+
+                <div class="form-group" id="regEmailGroup">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" class="form-control" placeholder="Nhập địa chỉ email">
+                    <div class="error-message" id="regEmailError">Email không hợp lệ</div>
+                </div>
+                
+                <div class="form-group" id="regPasswordGroup">
+                    <label for="registerPassword">Mật khẩu</label>
+                    <input type="password" id="registerPassword" class="form-control" placeholder="Tạo mật khẩu (Ít nhất 6 ký tự)">
+                    <div class="error-message" id="regPasswordError">Mật khẩu phải có ít nhất 6 ký tự</div>
+                </div>
+
+                <div class="form-group" id="confirmPasswordGroup">
+                    <label for="registerConfirmPassword">Xác nhận mật khẩu</label>
+                    <input type="password" id="registerConfirmPassword" class="form-control" placeholder="Nhập lại mật khẩu">
+                    <div class="error-message" id="confirmPasswordError">Mật khẩu xác nhận không khớp</div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full">Đăng ký ngay</button>
+                
+                <p class="auth-redirect">Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3 class="footer-logo">PET FOOD STORE</h3>
+                <p>Dinh dưỡng tốt nhất cho thú cưng của bạn.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Liên kết nhanh</h3>
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="products.html">Sản phẩm</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Chính sách</h3>
+                <ul>
+                    <li><a href="#">Bảo mật</a></li>
+                    <li><a href="#">Điều khoản</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Liên hệ</h3>
+                <ul>
+                    <li>📍 123 Đường ABC, TP.HCM</li>
+                    <li>📞 0123 456 789</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

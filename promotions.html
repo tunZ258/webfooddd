@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khuyến mãi - PET FOOD STORE</title>
+
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+    <style>
+      .promo-banner {
+        background: linear-gradient(135deg, var(--primary-color), #2e7d32);
+        color: white;
+        border-radius: var(--border-radius);
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        box-shadow: var(--box-shadow);
+      }
+
+      .promo-banner-content h2 {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      .promo-banner-content p {
+        font-size: 16px;
+        margin-bottom: 20px;
+        opacity: 0.9;
+      }
+
+      .voucher-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .voucher-card {
+        background-color: var(--card-bg);
+        border: 2px dashed var(--primary-color);
+        border-radius: var(--border-radius);
+        padding: 24px;
+        text-align: center;
+        position: relative;
+        transition: var(--transition);
+      }
+
+      .voucher-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--box-shadow-hover);
+      }
+
+      .voucher-value {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+      }
+
+      .voucher-desc {
+        color: var(--text-muted);
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      .voucher-code-box {
+        background-color: var(--bg-color);
+        border: 1px solid var(--border-color);
+        padding: 10px;
+        border-radius: 8px;
+        font-family: monospace;
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--text-main);
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+      }
+
+      @media (max-width: 992px) {
+        .voucher-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .promo-banner {
+          flex-direction: column;
+          text-align: center;
+          gap: 20px;
+        }
+      }
+      @media (max-width: 768px) {
+        .voucher-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">
+          <span class="logo-icon"></span>
+          <div class="logo-text">
+            <h1>PET FOOD STORE</h1>
+            <p>Dinh dưỡng tốt nhất cho thú cưng</p>
+          </div>
+        </a>
+
+        <div class="search-bar">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm kiếm sản phẩm..."
+          />
+          <button type="button" id="searchBtn">
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="header-actions">
+          <button id="darkModeToggle" class="action-btn" title="Chế độ tối">
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <a href="login.html" class="action-btn" title="Đăng nhập">
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </a>
+          <!-- <a href="#" class="action-btn" title="Yêu thích">
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+              ></path>
+            </svg>
+            <span class="badge" id="wishlistCount">0</span>
+          </a> -->
+          <a href="cart.html" class="action-btn" title="Giỏ hàng">
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path
+                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+              ></path>
+            </svg>
+            <span class="badge" id="cartCount">0</span>
+          </a>
+
+          <button class="hamburger" id="hamburgerBtn">
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <nav class="navbar" id="navbar">
+    <div class="container">
+        <ul class="nav-list">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="products.html">Sản phẩm</a></li>
+            
+            <li><a href="promotions.html" class="active">Khuyến mãi</a></li>
+            
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <main class="container section-padding">
+      <div class="breadcrumb" style="margin-bottom: 20px">
+        <a href="index.html">Trang chủ</a> / <span>Khuyến mãi</span>
+      </div>
+
+      <div class="promo-banner">
+        <div class="promo-banner-content">
+          <h2>Siêu Sale Cuối Tháng!</h2>
+          <p>
+            Nhập mã để nhận ngay các ưu đãi độc quyền dành riêng cho thành viên
+            PET FOOD STORE.
+          </p>
+          <a
+            href="products.html"
+            class="btn btn-outline"
+            style="border-color: white; color: white"
+            >Mua sắm ngay</a
+          >
+        </div>
+        <img
+          src="images/bai1.jpg"
+          alt="Khuyến mãi"
+          style="height: 150px; object-fit: contain"
+        />
+      </div>
+
+      <h2 class="section-title">Mã giảm giá khả dụng</h2>
+      <div class="voucher-grid">
+        <div class="voucher-card">
+          <div class="voucher-value">Giảm 10%</div>
+          <p class="voucher-desc">
+            Áp dụng cho mọi đơn hàng không giới hạn giá trị tối thiểu.
+          </p>
+          <div class="voucher-code-box">PETLOVE10</div>
+          <button class="btn btn-primary btn-copy" data-code="PETLOVE10">
+            Sao chép mã
+          </button>
+        </div>
+        <div class="voucher-card">
+          <div class="voucher-value">Freeship</div>
+          <p class="voucher-desc">
+            Miễn phí vận chuyển cho đơn hàng từ 300.000đ trở lên.
+          </p>
+          <div class="voucher-code-box">FREESHIP</div>
+          <button class="btn btn-primary btn-copy" data-code="FREESHIP">
+            Sao chép mã
+          </button>
+        </div>
+        <div class="voucher-card">
+          <div class="voucher-value">Giảm 50K</div>
+          <p class="voucher-desc">
+            Giảm trực tiếp 50.000đ cho khách hàng mới đăng ký tài khoản.
+          </p>
+          <div class="voucher-code-box">NEWPET50</div>
+          <button class="btn btn-primary btn-copy" data-code="NEWPET50">
+            Sao chép mã
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <h3 class="footer-logo">PET FOOD STORE</h3>
+          <p>
+            Dinh dưỡng tốt nhất cho thú cưng của bạn. Chúng tôi cam kết mang đến
+            những sản phẩm chất lượng hàng đầu.
+          </p>
+          <div class="social-links">
+            <a href="#">FB</a>
+            <a href="#">IG</a>
+            <a href="#">YT</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Liên kết nhanh</h3>
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="products.html">Sản phẩm</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Chính sách</h3>
+          <ul>
+            <li><a href="#">Chính sách giao hàng</a></li>
+            <li><a href="#">Chính sách đổi trả</a></li>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Điều khoản dịch vụ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Liên hệ</h3>
+          <ul>
+            <li>📍 123 Đường ABC, TP.HCM</li>
+            <li>📞 0123 456 789</li>
+            <li>✉️ support@petfoodstore.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 PET FOOD STORE. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" title="Lên đầu trang">
+      <svg
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+        stroke="currentColor"
+        stroke-width="2"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script>
+      document.querySelectorAll(".btn-copy").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const code = btn.getAttribute("data-code");
+          navigator.clipboard
+            .writeText(code)
+            .then(() => {
+              window.showToast(`Đã sao chép mã: ${code}`, "success");
+            })
+            .catch((err) => {
+              window.showToast("Không thể sao chép mã!", "error");
+            });
+        });
+      });
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/products.js"></script> 
+  </body>
+</html>

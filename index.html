@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PET FOOD STORE - Dinh dưỡng tốt nhất cho thú cưng của bạn</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div id="loader" class="loader-container">
+        <div class="spinner"></div>
+    </div>
+
+    <header class="header" id="header">
+        
+        <div class="container header-inner">
+            
+            <a href="index.html" class="logo">
+                <span class="logo-icon"></span>
+                <div class="logo-text">
+                    <h1>PET FOOD STORE</h1>
+                    <p>Dinh dưỡng tốt nhất cho thú cưng</p>
+                </div>
+            </a>
+
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+                <button type="button" id="searchBtn">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+
+            <div class="header-actions">
+                <button id="darkModeToggle" class="action-btn" title="Chế độ tối">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="login.html" class="action-btn" title="Đăng nhập">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </a>
+                <!-- <a href="#" class="action-btn" title="Yêu thích">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <span class="badge" id="wishlistCount">0</span>
+                </a> -->
+                <a href="cart.html" class="action-btn" title="Giỏ hàng">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <span class="badge" id="cartCount">0</span>
+                </a>
+                
+                <button class="hamburger" id="hamburgerBtn">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+        </div>
+
+        <nav class="navbar" id="navbar">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">Trang chủ</a></li>
+                    <li><a href="products.html">Sản phẩm</a></li>
+                    <li><a href="promotions.html">Khuyến mãi</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-slider" id="heroSlider">
+            <div class="slider-container" id="sliderContainer">
+                <div class="slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('images/slide1.jpg'); background-size: cover; color: white; background-position: center;">
+                    <div class="slide-content container">
+                        <h2>Thức ăn dinh dưỡng cho Chó</h2>
+                        <p>Giảm giá lên đến 30% cho các sản phẩm thương hiệu lớn.</p>
+                        <a href="products.html" class="btn btn-primary">Mua ngay</a>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+     url('images/slide2.jpg'); background-size: cover; background-position: center;">
+                    <div class="slide-content container">
+                        <h2 style="color: white;">Đồ chơi và Phụ kiện cho Mèo</h2>
+                        <p style="color: white;">Khám phá bộ sưu tập mới nhất dành riêng cho "Hoàng thượng".</p>
+                        <a href="products.html" class="btn btn-outline">Khám phá</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="slider-btn prev" id="sliderPrev">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="slider-btn next" id="sliderNext">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+
+            <div class="slider-indicators" id="sliderIndicators"></div>
+        </section>
+
+        <section class="categories container section-padding">
+            <h2 class="section-title">Danh mục thú cưng</h2>
+            <div class="category-grid">
+    <a href="products.html?category=dog" class="category-card">
+        <div class="icon-wrapper dog-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+                <path d="M20,11.5c0-1.66-1.34-3-3-3c-1.11,0-2.07,0.61-2.58,1.5H9.58C9.07,9.11,8.11,8.5,7,8.5c-1.66,0-3,1.34-3,3 c0,0.85,0.36,1.61,0.93,2.15C4.36,14.18,4,14.93,4,15.8c0,1.66,1.34,3,3,3c1.11,0,2.07-0.61,2.58-1.5h4.85 c0.51,0.89,1.47,1.5,2.58,1.5c1.66,0,3-1.34,3-3c0-0.87-0.36-1.62-0.93-2.15C19.64,13.11,20,12.35,20,11.5z"/>
+            </svg>
+        </div>
+        <h3>Chó</h3>
+    </a>
+
+    <a href="products.html?category=cat" class="category-card">
+        <div class="icon-wrapper cat-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+                <path d="M12,2C9.24,2,7,4.24,7,7c0,2.76,2.24,5,5,5s5-2.24,5-5C17,4.24,14.76,2,12,2z M6.5,13.5C4.57,13.5,3,15.07,3,17 c0,1.93,1.57,3.5,3.5,3.5S10,18.93,10,17C10,15.07,8.43,13.5,6.5,13.5z M17.5,13.5C15.57,13.5,14,15.07,14,17c0,1.93,1.57,3.5,3.5,3.5 S21,18.93,21,17C21,15.07,19.43,13.5,17.5,13.5z M12,14c-1.66,0-3,1.34-3,3c0,1.66,1.34,3,3,3s3-1.34,3-3C15,15.34,13.66,14,12,14z"/>
+            </svg>
+        </div>
+        <h3>Mèo</h3>
+    </a>
+
+    <a href="products.html?category=hamster" class="category-card">
+        <div class="icon-wrapper hamster-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+                <circle cx="12" cy="12" r="8"/>
+                <path d="M9 10a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" fill="#fff"/>
+                <path d="M10 14h4v2h-4z" fill="#fff"/>
+            </svg>
+        </div>
+        <h3>Hamster</h3>
+    </a>
+
+    <a href="products.html?category=rabbit" class="category-card">
+        <div class="icon-wrapper rabbit-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22v-3"/><path d="M16 4v7"/><path d="M8 4v7"/><path d="M12 11c-2.5 0-4.5 2-4.5 4.5S9.5 20 12 20s4.5-2.25 4.5-4.5S14.5 11 12 11z"/><circle cx="10" cy="15" r="1" fill="currentColor"/><circle cx="14" cy="15" r="1" fill="currentColor"/>
+            </svg>
+        </div>
+        <h3>Thỏ</h3>
+    </a>
+
+    <a href="products.html?category=bird" class="category-card">
+        <div class="icon-wrapper bird-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+                <path d="M21.5,4.5c-0.8-0.8-2.2-1.1-3.4-0.8c-2,0.4-3.8,1.7-5,3.4C10.7,5.5,7.9,5,5.6,6.2C3.1,7.5,1.7,10.2,2.2,13 c0.3,1.4,1,2.7,2,3.6c-0.3,1.3-0.2,2.8,0.5,4c0.5,1,1.5,1.7,2.7,2c1.7,0.4,3.5-0.1,4.7-1.3c2.6,0.3,5.3-0.4,7.2-2.3 C21.8,16.5,22.8,13.2,21.5,4.5z M10.4,19.3c-0.7,0.7-1.8,0.9-2.7,0.7c-0.6-0.1-1.1-0.5-1.4-1.1c-0.3-0.8-0.3-1.7,0-2.4 c0.5-1,1.4-1.7,2.5-1.9c1-0.2,2,0.1,2.7,0.8C12.3,16.2,12.3,18.4,10.4,19.3z M18.4,10.3c-0.8,2.4-2.8,4.3-5.2,5.1 c-0.6,0.2-1.3-0.1-1.5-0.7c-0.2-0.6,0.1-1.3,0.7-1.5c1.8-0.6,3.3-2,3.9-3.9c0.2-0.6,0.8-0.9,1.4-0.7C18.3,8.9,18.6,9.6,18.4,10.3z"/>
+            </svg>
+        </div>
+        <h3>Chim</h3>
+    </a>
+
+    <a href="products.html?category=fish" class="category-card">
+        <div class="icon-wrapper fish-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 4C7.58 4 4 7.58 4 12s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8z"/><path d="M20 12l4-4v8l-4-4z"/><circle cx="10" cy="10" r="1" fill="currentColor"/>
+            </svg>
+        </div>
+        <h3>Cá</h3>
+    </a>
+</div>
+        </section>
+
+        <section class="flash-sale section-padding">
+            <div class="container">
+                <div class="flash-sale-header">
+                    <h2 class="section-title">⚡ Flash Sale</h2>
+                    <div class="countdown" id="countdown">
+                        <div class="time-box"><span id="cdDays">00</span><small>Ngày</small></div>
+                        <div class="time-box"><span id="cdHours">00</span><small>Giờ</small></div>
+                        <div class="time-box"><span id="cdMins">00</span><small>Phút</small></div>
+                        <div class="time-box"><span id="cdSecs">00</span><small>Giây</small></div>
+                    </div>
+                </div>
+                <div class="product-grid" id="flashSaleProducts"></div>
+            </div>
+        </section>
+
+        <section class="featured-products container section-padding">
+            <div class="section-header">
+                <h2 class="section-title">Sản phẩm nổi bật</h2>
+                <a href="products.html" class="view-all">Xem tất cả &rarr;</a>
+            </div>
+            <div class="product-grid" id="featuredProducts"></div>
+        </section>
+
+        <section class="best-sellers container section-padding">
+            <div class="section-header">
+                <h2 class="section-title">Sản phẩm bán chạy</h2>
+                <a href="products.html" class="view-all">Xem tất cả &rarr;</a>
+            </div>
+            <div class="product-grid" id="bestSellerProducts"></div>
+        </section>
+        <section class="brands container section-padding">
+            <h2 class="section-title">Thương hiệu đồng hành</h2>
+            <div class="brand-grid">
+                <div class="brand-card"><span>Pedigree</span></div>
+                <div class="brand-card"><span>Royal Canin</span></div>
+                <div class="brand-card"><span>Whiskas</span></div>
+                <div class="brand-card"><span>Me-O</span></div>
+                <div class="brand-card"><span>Nutrience</span></div>
+                <div class="brand-card"><span>Ganador</span></div>
+            </div>
+        </section>
+
+        <section class="blog-section container section-padding">
+            <div class="section-header">
+                <h2 class="section-title">Kiến thức thú cưng</h2>
+                <a href="#" class="view-all">Xem thêm bài viết &rarr;</a>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-img" style="background-image: url('images/bai1.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">10/10/2023</span>
+                        <h3>Cách chọn thức ăn hạt cho chó con</h3>
+                        <p>Hướng dẫn chi tiết cách lựa chọn loại hạt phù hợp với từng độ tuổi và giống chó...</p>
+                        <a href="#" class="btn-read-more">Đọc tiếp</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-img" style="background-image: url('images/bai2.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">08/10/2023</span>
+                        <h3>Dấu hiệu mèo cưng của bạn đang bị stress</h3>
+                        <p>Nhận biết sớm các biểu hiện căng thẳng ở mèo để có biện pháp xử lý kịp thời...</p>
+                        <a href="#" class="btn-read-more">Đọc tiếp</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-img" style="background-image: url('images/bai3.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">05/10/2023</span>
+                        <h3>Lịch tiêm phòng chuẩn cho thú cưng</h3>
+                        <p>Tổng hợp các mũi tiêm cần thiết trong năm đầu đời của chó và mèo để bảo vệ sức khỏe...</p>
+                        <a href="#" class="btn-read-more">Đọc tiếp</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3 class="footer-logo">PET FOOD STORE</h3>
+                <p>Dinh dưỡng tốt nhất cho thú cưng của bạn. Chúng tôi cam kết mang đến những sản phẩm chất lượng hàng đầu.</p>
+                <div class="social-links">
+                    <a href="#">FB</a>
+                    <a href="#">IG</a>
+                    <a href="#">YT</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Liên kết nhanh</h3>
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="products.html">Sản phẩm</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Chính sách</h3>
+                <ul>
+                    <li><a href="#">Chính sách giao hàng</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Điều khoản dịch vụ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Liên hệ</h3>
+                <ul>
+                    <li>📍 123 Đường ABC, TP.HCM</li>
+                    <li>📞 0123 456 789</li>
+                    <li>✉️ support@petfoodstore.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PET FOOD STORE. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" title="Lên đầu trang">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/products.js"></script> 
+</body>
+</html>

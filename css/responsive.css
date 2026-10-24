@@ -1,0 +1,196 @@
+/* =========================================
+   RESPONSIVE DESIGN & MEDIA QUERIES
+   ========================================= */
+
+/* Lớn hơn Desktop mặc định (>= 1200px) đã được xử lý bằng max-width: 1200px trong style.css */
+
+/* LAPTOP & TABLET NGANG (max-width: 1199px) */
+@media (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    /* Điều chỉnh Grid */
+    .category-grid, .brand-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* TABLET (max-width: 992px) */
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    /* Header - Chuyển Search Bar xuống dòng dưới */
+    .header-inner {
+        flex-wrap: wrap;
+    }
+    
+    .search-bar {
+        order: 3;
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    /* Hiển thị nút Hamburger Mobile */
+    .hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Ẩn Navigation mặc định và chuyển sang dạng thả xuống (Dropdown Mobile) */
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--card-bg);
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        border-top: 1px solid var(--border-color);
+        z-index: 999;
+    }
+    
+    .navbar.active {
+        display: block;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .nav-list a {
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .nav-list a::after {
+        display: none;
+    }
+    
+    /* Điều chỉnh các phần nội dung khác */
+    .category-grid, .brand-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .hero-slider {
+        height: 350px;
+    }
+    
+    .slide {
+        padding: 0 30px;
+    }
+}
+
+/* MOBILE LỚN (max-width: 768px) */
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+    
+    .hero-slider {
+        height: 300px;
+    }
+    
+    .slide-content h2 {
+        font-size: 28px;
+    }
+    
+    .slide-content p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    
+    /* Giảm số cột trên điện thoại */
+    .category-grid, .brand-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Căn lại Flash Sale Header */
+    .flash-sale-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+/* MOBILE NHỎ (max-width: 576px) */
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+    
+    .section-padding {
+        padding: 40px 0;
+    }
+    
+    .section-title {
+        font-size: 20px;
+    }
+    
+    /* Header Thu gọn */
+    .logo-text h1 {
+        font-size: 16px;
+    }
+    
+    .logo-text p {
+        display: none; /* Ẩn slogan trên màn hình quá nhỏ để tiết kiệm không gian */
+    }
+    
+    .logo-icon {
+        font-size: 24px;
+    }
+    
+    .header-actions {
+        gap: 8px;
+    }
+    
+    .action-btn {
+        width: 32px;
+        height: 32px;
+    }
+    
+    /* Chuyển Product và Footer thành 1 cột */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .time-box {
+        min-width: 45px;
+        padding: 4px 8px;
+    }
+    
+    .time-box span {
+        font-size: 16px;
+    }
+}
